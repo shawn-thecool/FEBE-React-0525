@@ -12,12 +12,18 @@ import './popup.css';
 
 export default function Popup() {
   const dispatch = useDispatch();
-  // selectors
+  /**
+   * selectors
+   */
   const hasContent = useSelector(hasContentSelector);
   const currentPopup = useSelector(currentPopupSelector);
-  // handlers
+  /**
+   * handlers
+   */
   const onCloseHndr = (popup) => dispatch(popupActions.remove(popup.id));
-  // hooks
+  /**
+   * hooks
+   */
   useEffect(() => {
     dispatch(popupActions.create(POPUP_TYPE.ALERT, MSG_TYPE.UNKNOWN_ERROR));
     dispatch(popupActions.create(POPUP_TYPE.CONFIRM, MSG_TYPE.LOG_OUT));
@@ -28,7 +34,9 @@ export default function Popup() {
       ? document.body.classList.add(DISABLE_SCROLL_CALSS)
       : document.body.classList.remove(DISABLE_SCROLL_CALSS);
   }, [hasContent]);
-  // render
+  /**
+   * render
+   */
   return hasContent && currentPopup ? (
     <div className="wrap_popup">
       <div className="popup" key={currentPopup.id}>
