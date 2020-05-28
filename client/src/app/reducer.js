@@ -1,4 +1,4 @@
-import { popupReducer } from '../features/popup/reducer';
+import { popupReducer } from '../components/popup/reducer';
 
 export default {
   popup: popupReducer

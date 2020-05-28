@@ -1,5 +1,5 @@
 import React from 'react';
-import Popup from './features/popup/Popup';
+import Popup from './components/popup/Popup';
 
 function App() {
   return (
