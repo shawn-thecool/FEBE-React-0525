@@ -1,14 +1,19 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
 import { POPUP_TYPE, MSG_TYPE } from './constant';
-// 추상화, 인터페이스
+/**
+ * popupId popup-{++id}
+ */
 let popupId = 0;
+/**
+ * slice
+ */
 const popup = createSlice({
   name: 'popup',
   initialState: [],
   reducers: {
     create: {
-      reducer: (popups, { payload: { type, msgs } }) =>
-        popups.concat({ id: `popup-${++popupId}`, type, msgs }),
+      reducer: (state, { payload: { type, msgs } }) =>
+        state.concat({ id: `popup-${++popupId}`, type, msgs }),
       prepare: (type, msgs) => ({
         payload: {
           type: type || POPUP_TYPE.ALERT,
@@ -17,23 +22,23 @@ const popup = createSlice({
       })
     },
     remove: {
-      reducer: (popups, { payload }) => popups.filter((p) => p.id !== payload),
+      reducer: (state, { payload }) => state.filter((p) => p.id !== payload),
       prepare: (id) => ({ payload: id || 0 })
     }
   }
 });
 /**
- * computed selectors
+ * computed selectors (re-selectors)
  */
 export const hasContentSelector = createSelector(
   (state) => state.popup,
   (popups) => popups.length > 0
 );
 /**
- * exportation
+ * action tpyes
  */
 export const popupActions = popup.actions;
+/**
+ * reducer
+ */
 export const popupReducer = popup.reducer;
-
-
-

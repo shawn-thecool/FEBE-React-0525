@@ -10,3 +10,4 @@ export const MSG_TYPE = {
   ],
   LOG_OUT: ['로그아웃 하시겠습니까?']
 };
+export const DISABLE_SCROLL_CALSS = 'open_popup';
