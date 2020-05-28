@@ -1,0 +1,18 @@
+.wrap_todo {
+  display: flex;
+  flex-direction: row;
+  margin: 50px 0;
+}
+.list_todo {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 600px;
+}
+.list_todo li {
+  flex:1 1 0;
+  height: 50px;
+  text-align: center;
+  background-color: aqua;
+  border-bottom: 1px solid #efefef;
+}

@@ -25,9 +25,9 @@ export default function Popup() {
    * hooks
    */
   useEffect(() => {
-    dispatch(popupActions.create(POPUP_TYPE.ALERT, MSG_TYPE.UNKNOWN_ERROR));
-    dispatch(popupActions.create(POPUP_TYPE.CONFIRM, MSG_TYPE.LOG_OUT));
-    dispatch(popupActions.create());
+    // dispatch(popupActions.create(POPUP_TYPE.ALERT, MSG_TYPE.UNKNOWN_ERROR));
+    // dispatch(popupActions.create(POPUP_TYPE.CONFIRM, MSG_TYPE.LOG_OUT));
+    // dispatch(popupActions.create());
   }, [dispatch]);
   useEffect(() => {
     hasContent
