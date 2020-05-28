@@ -7,7 +7,7 @@ let popupId = 0;
 /**
  * slice
  */
-const popup = createSlice({
+const popups = createSlice({
   name: 'popup',
   initialState: [],
   reducers: {
@@ -34,11 +34,15 @@ export const hasContentSelector = createSelector(
   (state) => state.popup,
   (popups) => popups.length > 0
 );
+export const currentPopupSelector = createSelector(
+  (state) => state.popup,
+  (popups) => popups.find((item, idx) => idx === 0)
+);
 /**
  * action tpyes
  */
-export const popupActions = popup.actions;
+export const popupActions = popups.actions;
 /**
  * reducer
  */
-export const popupReducer = popup.reducer;
+export const popupReducer = popups.reducer;
