@@ -1,0 +1,46 @@
+/* common */
+
+/* btn */
+.wrap_btn {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.wrap_btn .btn {
+  flex: 1 1 0;
+  margin: auto;
+  overflow: auto;
+  height: 40px;
+  background-color: #e7e7e7;
+  border: 0 none;
+  cursor: pointer;
+}
+.wrap_btn .btn:hover,
+.wrap_btn .btn:focus {
+  background-color: #808080;
+  color: #fff;
+}
+.wrap_btn .btn + .btn {
+  margin-left: 20px;
+}
+
+/* popup */
+.wrap_popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.wrap_popup .popup {
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+.popup .box_msg {
+  margin-top: 20px;
+}
